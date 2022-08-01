@@ -1,19 +1,31 @@
 <html>
   <body>
     <mat-toolbar>
-      <button mat-icon-button>
-        <mat-icon>menu</mat-icon>
-      </button>
-      
-      <a routerLink="/reminders" routerLinkActive="active" ariaCurrentWhenActive="page">
-      <button mat-icon-button >
-        <mat-icon>done</mat-icon>
-      </button>
-    </a>
-    
     <a routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page">
       <span>MySpace</span>
     </a>
+
+    <div style="margin-left: 20px;">
+    
+      <a routerLink="/reminders" routerLinkActive="active" ariaCurrentWhenActive="page">
+        <button mat-icon-button >
+          <mat-icon>done</mat-icon>
+        </button>
+      </a>
+
+        <button mat-icon-button [matMenuTriggerFor]="moneyMenu">
+          <mat-icon>euro</mat-icon>
+        </button>
+        <mat-menu #moneyMenu="matMenu">
+          <button mat-menu-item>
+            <a routerLink="/subscriptions" routerLinkActive="active" ariaCurrentWhenActive="page">
+              <mat-icon>currency_exchange</mat-icon>
+              <span>Subscriptions</span>
+            </a>
+          </button>
+        </mat-menu>
+
+    </div>
     
   </mat-toolbar>
 
